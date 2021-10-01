@@ -16,17 +16,17 @@
 </head>
 
 <body>
-    <div class="text-center">
-        <h1>Calendario de vehiculo rentados al dia</h1>
+    <div class="text-center mb-3">
+        <h1>Calendario de vehiculos rentados al dia</h1>
     </div>
 
     <section class="container">
-        <div class="calendar">
+        <div class="calendar-container">
             <!-- Seleccionar el tipo de vehiculo y cambiar el dia (anterior, hoy, siguiente) -->
             <div class="calendar-header">
                 <div class="calendar-filters">
                     <label for="vehicle-type">Tipo de vehiculo</label>
-                    <select name="vehicle-type" id="vehicle-type">
+                    <select class="form-control" name="vehicle-type" id="vehicle-type">
                         <option value="1">Carro chico</option>
                         <option value="1">Carro grande</option>
                     </select>
@@ -38,7 +38,50 @@
                 </div>
             </div>
             <!-- Mostrar el listado de las horas y los vehiculos con su ocupacion durante el dia actual -->
-            <div></div>
+            <div class="calendar-body">
+                <div class="calendar">
+                    <div class="calendar-vehicles-list">
+                        <span>Hrs.</span>
+                        <span>CH-01</span>
+                        <span>CH-02</span>
+                        <span>CH-03</span>
+                        <span>CH-04</span>
+                        <span>CH-05</span>
+                    </div>
+                    <div class="calendar-vehicles-occupation">
+                        <span class="hour">0</span>
+                        <span class="v1"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="hour">1</span>
+                        <span class="v2"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="hour">2</span>
+                        <span class="v2"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="hour">3</span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <!-- <div>
+                    </div> -->
+                    <!-- <div>
+                    </div> -->
+                    <!-- <div>
+                    </div> -->
+                </div>
+            </div>
         </div>
     </section>
 

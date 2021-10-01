@@ -2,13 +2,22 @@
   border: 1px solid crimson;
 }
 
-@mixin transition {
-    transition: .3s all;
+@mixin border-span {
+  border: 1px solid #e0e0e0;
 }
 
-.calendar {
+@mixin transition {
+  transition: 0.3s all;
+}
+
+@mixin random-bgr() {
+  background: rgb(random(255), random(255), random(255));
+}
+
+.calendar-container {
   @include border;
   padding: 1rem;
+  user-select: none;
 }
 
 .calendar-header {
@@ -31,14 +40,60 @@
 .calendar-actions {
   // @include border;
   span {
-      @include transition();
+    @include transition();
     display: inline-block;
     font-size: 1.5rem;
     padding: 0.5rem;
     cursor: pointer;
 
     &:hover {
-        opacity: .5;
+      opacity: 0.5;
     }
   }
+}
+
+.calendar {
+  // @include border();
+  margin-top: 1rem;
+
+  div {
+    // @include border();
+    display: grid;
+    grid-template-columns: 50px repeat(5, auto); // el segundo valor se agregar por JS
+  }
+
+  .calendar-vehicles-list {
+    span {
+      text-align: center;
+    }
+  }
+
+  .calendar-vehicles-occupation {
+    @include border();
+    .hour {
+      text-align: center;
+    }
+  }
+
+
+  span {
+    @include border-span();
+    display: block;
+  }
+}
+
+/*-------------------- Ocupados --------------------*/
+
+.v1 {
+  @include random-bgr();
+  border: none !important;
+
+}
+
+.v2 {
+  @include random-bgr();
+  border: none !important;
+  // grid-column-start: 2;
+  // grid-row-start: 2;
+  // grid-row-end: 4;
 }

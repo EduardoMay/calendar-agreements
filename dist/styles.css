@@ -1,6 +1,7 @@
-.calendar {
+.calendar-container {
   border: 1px solid crimson;
   padding: 1rem;
+  user-select: none;
 }
 
 .calendar-header {
@@ -24,6 +25,38 @@
 }
 .calendar-actions span:hover {
   opacity: 0.5;
+}
+
+.calendar {
+  margin-top: 1rem;
+}
+.calendar div {
+  display: grid;
+  grid-template-columns: 50px repeat(5, auto);
+}
+.calendar .calendar-vehicles-list span {
+  text-align: center;
+}
+.calendar .calendar-vehicles-occupation {
+  border: 1px solid crimson;
+}
+.calendar .calendar-vehicles-occupation .hour {
+  text-align: center;
+}
+.calendar span {
+  border: 1px solid #e0e0e0;
+  display: block;
+}
+
+/*-------------------- Ocupados --------------------*/
+.v1 {
+  background: #88bc8e;
+  border: none !important;
+}
+
+.v2 {
+  background: #2c90e2;
+  border: none !important;
 }
 
 /*# sourceMappingURL=styles.css.map */
