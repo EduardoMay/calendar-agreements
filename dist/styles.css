@@ -35,6 +35,7 @@
   grid-template-columns: 50px repeat(6, auto);
 }
 .calendar .calendar-vehicles-list span {
+  border: 1px solid #e0e0e0;
   text-align: center;
   font-weight: bold;
   font-size: 1.5rem;
@@ -47,9 +48,14 @@
 .calendar .calendar-vehicles-occupation .calendar-hours {
   display: grid;
   grid-template-columns: 50px;
+  grid-template-rows: repeat(5, 50px);
+  vertical-align: middle;
 }
 .calendar .calendar-vehicles-occupation .calendar-hours span {
-  display: block;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   font-weight: bold;
 }
@@ -59,12 +65,10 @@
 }
 .calendar .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle {
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 50px);
 }
-.calendar span {
+.calendar .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle div, .calendar .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle span {
   border: 1px solid #e0e0e0;
-  display: block;
-  padding: 0.5rem 0;
 }
 
 /*-------------------- Ocupados --------------------*/
@@ -72,16 +76,37 @@
   border: none !important;
 }
 
+.v-minute {
+  display: block;
+}
+.v-minute:nth-child(1) {
+  height: 30%;
+  width: 100%;
+}
+.v-minute:nth-child(2) {
+  height: 70%;
+  width: 100%;
+  background: #fd5db9;
+}
+
 .v1 {
-  background: #9a0793;
+  background: #9554bc;
 }
 
 .v2 {
-  background: #d187a7;
+  background: #8cef1d;
 }
 
 .v3 {
-  background: #8c79b0;
+  background: #655067;
+}
+
+.v4 {
+  background: #5d4c04;
+}
+
+.v5 {
+  background: #b83195;
 }
 
 /*# sourceMappingURL=styles.css.map */

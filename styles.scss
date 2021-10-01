@@ -64,6 +64,7 @@
 
   .calendar-vehicles-list {
     span {
+      @include border-span();
       text-align: center;
       font-weight: bold;
       font-size: 1.5rem;
@@ -79,9 +80,14 @@
     .calendar-hours {
       display: grid;
       grid-template-columns: 50px;
+      grid-template-rows: repeat(5, 50px);
+      vertical-align: middle;
 
       span {
-        display: block;
+        @include border-span();
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
         font-weight: bold;
       }
@@ -93,22 +99,41 @@
 
       .calendar-vehicle {
         display: grid;
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 50px);
+
+        div, span {
+          @include border-span();
+        }
       }
     }
   }
 
-  span {
-    @include border-span();
-    display: block;
-    padding: 0.5rem 0;
-  }
+  // span {
+  //   @include border-span();
+  //   display: block;
+  //   padding: 0.5rem 0;
+  // }
 }
 
 /*-------------------- Ocupados --------------------*/
 
 .occupied {
   border: none !important;
+}
+
+.v-minute {
+  display: block;
+
+  &:nth-child(1) {
+    height: 30%;
+    width: 100%;
+  }
+
+  &:nth-child(2) {
+    height: 70%;
+    width: 100%;
+    @include random-bgr();
+  }
 }
 
 .v1 {
@@ -120,5 +145,13 @@
 }
 
 .v3 {
+  @include random-bgr();
+}
+
+.v4 {
+  @include random-bgr();
+}
+
+.v5 {
   @include random-bgr();
 }
