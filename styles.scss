@@ -1,0 +1,44 @@
+@mixin border {
+  border: 1px solid crimson;
+}
+
+@mixin transition {
+    transition: .3s all;
+}
+
+.calendar {
+  @include border;
+  padding: 1rem;
+}
+
+.calendar-header {
+  // @include border;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-filters {
+  // @include border();
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.calendar-actions {
+  // @include border;
+  span {
+      @include transition();
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .5;
+    }
+  }
+}

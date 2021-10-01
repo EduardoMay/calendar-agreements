@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agreements Calendar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="dist/utilities.css">
+    <link rel="stylesheet" href="dist/styles.css">
+</head>
+
+<body>
+    <div class="text-center">
+        <h1>Calendario de vehiculo rentados al dia</h1>
+    </div>
+
+    <section class="container">
+        <div class="calendar">
+            <!-- Seleccionar el tipo de vehiculo y cambiar el dia (anterior, hoy, siguiente) -->
+            <div class="calendar-header">
+                <div class="calendar-filters">
+                    <label for="vehicle-type">Tipo de vehiculo</label>
+                    <select name="vehicle-type" id="vehicle-type">
+                        <option value="1">Carro chico</option>
+                        <option value="1">Carro grande</option>
+                    </select>
+                </div>
+                <div class="calendar-actions">
+                    <span id="previous-day"><i class="fa fa-chevron-left"></i></span>
+                    <span id="current-day">Lunes 1/oct</span>
+                    <span id="next-day"><i class="fa fa-chevron-right"></i></span>
+                </div>
+            </div>
+            <!-- Mostrar el listado de las horas y los vehiculos con su ocupacion durante el dia actual -->
+            <div></div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

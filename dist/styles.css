@@ -1,0 +1,29 @@
+.calendar {
+  border: 1px solid crimson;
+  padding: 1rem;
+}
+
+.calendar-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-filters label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.calendar-actions span {
+  transition: 0.3s all;
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.calendar-actions span:hover {
+  opacity: 0.5;
+}
+
+/*# sourceMappingURL=styles.css.map */
