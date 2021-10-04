@@ -1,5 +1,5 @@
 .calendar-container {
-  border: 1px solid crimson;
+  border: 1px solid #e0e0e0;
   padding: 1rem;
   user-select: none;
 }
@@ -27,52 +27,77 @@
   opacity: 0.5;
 }
 
-.calendar {
+.calendar-body {
+  border: 1px solid #e0e0e0;
   margin-top: 1rem;
 }
-.calendar .calendar-vehicles-list {
+.calendar-body .calendar-vehicles-list {
   display: grid;
-  grid-template-columns: 50px repeat(6, auto);
+  grid-template-columns: 50px repeat(6, 1fr);
 }
-.calendar .calendar-vehicles-list span {
-  border: 1px solid #e0e0e0;
-  text-align: center;
+.calendar-body .calendar-vehicles-list span {
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
   font-size: 1.5rem;
-  padding: 0.5rem 0;
 }
-.calendar .calendar-vehicles-occupation {
+.calendar-body .calendar-vehicles-list span:first-child {
+  border-bottom: 1px solid #e0e0e0;
+}
+.calendar-body .calendar-vehicles-list span:last-child {
+  border-right: none;
+}
+.calendar-body .calendar-vehicles-occupation {
   display: grid;
   grid-template-columns: 50px auto;
 }
-.calendar .calendar-vehicles-occupation .calendar-hours {
+.calendar-body .calendar-vehicles-occupation .calendar-hours {
   display: grid;
   grid-template-columns: 50px;
-  grid-template-rows: repeat(5, 50px);
+  grid-template-rows: repeat(4, 30px);
   vertical-align: middle;
 }
-.calendar .calendar-vehicles-occupation .calendar-hours span {
-  border: 1px solid #e0e0e0;
+.calendar-body .calendar-vehicles-occupation .calendar-hours span {
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-weight: bold;
 }
-.calendar .calendar-vehicles-occupation .calendar-vehicles {
+.calendar-body .calendar-vehicles-occupation .calendar-hours span:last-child {
+  border-bottom: none;
+}
+.calendar-body .calendar-vehicles-occupation .calendar-vehicles {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
 }
-.calendar .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle {
+.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle {
   display: grid;
-  grid-template-rows: repeat(5, 50px);
+  grid-template-rows: repeat(4, 30px);
 }
-.calendar .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle div, .calendar .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle span {
-  border: 1px solid #e0e0e0;
+.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle div,
+.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle span {
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle div:last-child,
+.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle span:last-child {
+  border-bottom: none;
+}
+.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle:last-child span {
+  border-right: none;
 }
 
 /*-------------------- Ocupados --------------------*/
 .occupied {
+  border-bottom: none !important;
+}
+.occupied span {
   border: none !important;
 }
 
@@ -86,27 +111,27 @@
 .v-minute:nth-child(2) {
   height: 70%;
   width: 100%;
-  background: #fd5db9;
+  background: #d2f513;
 }
 
 .v1 {
-  background: #9554bc;
+  background: #b5bdb8;
 }
 
 .v2 {
-  background: #8cef1d;
+  background: #cf94cf;
 }
 
 .v3 {
-  background: #655067;
+  background: #cf2cef;
 }
 
 .v4 {
-  background: #5d4c04;
+  background: #080d0f;
 }
 
 .v5 {
-  background: #b83195;
+  background: #857b6d;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,9 +1,20 @@
 @mixin border {
-  border: 1px solid crimson;
+  border: 1px solid #e0e0e0;
+}
+
+@mixin border-type-vehicles {
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 @mixin border-span {
-  border: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+@mixin border-hours {
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 @mixin transition {
@@ -21,7 +32,6 @@
 }
 
 .calendar-header {
-  // @include border;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -29,8 +39,6 @@
 }
 
 .calendar-filters {
-  // @include border();
-
   label {
     display: block;
     margin-bottom: 0.5rem;
@@ -38,7 +46,6 @@
 }
 
 .calendar-actions {
-  // @include border;
   span {
     @include transition();
     display: inline-block;
@@ -52,44 +59,55 @@
   }
 }
 
-.calendar {
-  // @include border();
+.calendar-body {
+  @include border();
   margin-top: 1rem;
 
   .calendar-vehicles-list {
-      // @include border();
-      display: grid;
-      grid-template-columns: 50px repeat(6, auto); // el segundo valor se agregar por JS
+    display: grid;
+    grid-template-columns: 50px repeat(6, 1fr); // el segundo valor se agregar por JS
   }
 
   .calendar-vehicles-list {
     span {
-      @include border-span();
-      text-align: center;
+      @include border-type-vehicles();
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-weight: bold;
       font-size: 1.5rem;
-      padding: 0.5rem 0;
+
+      &:first-child {
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      &:last-child {
+        border-right:none;
+      }
     }
   }
 
   .calendar-vehicles-occupation {
-    // @include border();
     display: grid;
     grid-template-columns: 50px auto;
 
     .calendar-hours {
       display: grid;
       grid-template-columns: 50px;
-      grid-template-rows: repeat(5, 50px);
+      grid-template-rows: repeat(4, 30px);
       vertical-align: middle;
 
       span {
-        @include border-span();
+        @include border-hours();
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         font-weight: bold;
+
+        &:last-child {
+          border-bottom: none;
+        }
       }
     }
 
@@ -99,10 +117,19 @@
 
       .calendar-vehicle {
         display: grid;
-        grid-template-rows: repeat(5, 50px);
+        grid-template-rows: repeat(4, 30px);
 
-        div, span {
+        div,
+        span {
           @include border-span();
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+
+        &:last-child span {
+          border-right: none;
         }
       }
     }
@@ -118,7 +145,11 @@
 /*-------------------- Ocupados --------------------*/
 
 .occupied {
-  border: none !important;
+  border-bottom: none !important;
+
+  span {
+    border: none !important;
+  }
 }
 
 .v-minute {
