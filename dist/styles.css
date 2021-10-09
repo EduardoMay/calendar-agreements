@@ -23,6 +23,10 @@
   padding: 0.5rem;
   cursor: pointer;
 }
+.calendar-actions span:nth-child(2) {
+  text-align: center;
+  width: 150px;
+}
 .calendar-actions span:hover {
   opacity: 0.5;
 }
@@ -33,7 +37,6 @@
 }
 .calendar-body .calendar-vehicles-list {
   display: grid;
-  grid-template-columns: 50px repeat(6, 1fr);
 }
 .calendar-body .calendar-vehicles-list span {
   border-right: 1px solid #e0e0e0;
@@ -52,12 +55,20 @@
 }
 .calendar-body .calendar-vehicles-occupation {
   display: grid;
-  grid-template-columns: 50px auto;
+  grid-template-columns: 35px auto;
+  max-height: 400px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.calendar-body .calendar-vehicles-occupation::-webkit-scrollbar {
+  display: none;
 }
 .calendar-body .calendar-vehicles-occupation .calendar-hours {
   display: grid;
-  grid-template-columns: 50px;
-  grid-template-rows: repeat(4, 30px);
+  grid-template-columns: 35px;
   vertical-align: middle;
 }
 .calendar-body .calendar-vehicles-occupation .calendar-hours span {
@@ -74,11 +85,10 @@
 }
 .calendar-body .calendar-vehicles-occupation .calendar-vehicles {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
 }
 .calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle {
   display: grid;
-  grid-template-rows: repeat(4, 30px);
+  grid-template-rows: repeat(24, 30px);
 }
 .calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle div,
 .calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle span {
@@ -92,46 +102,43 @@
 .calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle:last-child span {
   border-right: none;
 }
+.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle:hover {
+  background-color: #fffbfb;
+}
 
 /*-------------------- Ocupados --------------------*/
 .occupied {
   border-bottom: none !important;
 }
-.occupied span {
+
+.current-hour {
+  background-color: #f39c12;
+}
+
+.last-hour span {
+  display: block;
+  width: 100%;
   border: none !important;
 }
 
-.v-minute {
-  display: block;
-}
-.v-minute:nth-child(1) {
-  height: 30%;
-  width: 100%;
-}
-.v-minute:nth-child(2) {
-  height: 70%;
-  width: 100%;
-  background: #d2f513;
-}
-
 .v1 {
-  background: #b5bdb8;
+  background: #700b3e;
 }
 
 .v2 {
-  background: #cf94cf;
+  background: #b02429;
 }
 
 .v3 {
-  background: #cf2cef;
+  background: #ca7a66;
 }
 
 .v4 {
-  background: #080d0f;
+  background: #cbad62;
 }
 
 .v5 {
-  background: #857b6d;
+  background: #a042bc;
 }
 
 /*# sourceMappingURL=styles.css.map */

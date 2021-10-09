@@ -53,6 +53,11 @@
     padding: 0.5rem;
     cursor: pointer;
 
+    &:nth-child(2) {
+      text-align: center;
+      width: 150px;
+    }
+
     &:hover {
       opacity: 0.5;
     }
@@ -65,7 +70,7 @@
 
   .calendar-vehicles-list {
     display: grid;
-    grid-template-columns: 50px repeat(6, 1fr); // el segundo valor se agregar por JS
+    // grid-template-columns: 35px repeat(6, 1fr); // el segundo valor se agregar por JS
   }
 
   .calendar-vehicles-list {
@@ -82,19 +87,27 @@
       }
 
       &:last-child {
-        border-right:none;
+        border-right: none;
       }
     }
   }
 
   .calendar-vehicles-occupation {
     display: grid;
-    grid-template-columns: 50px auto;
+    grid-template-columns: 35px auto;
+    max-height: 400px;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .calendar-hours {
       display: grid;
-      grid-template-columns: 50px;
-      grid-template-rows: repeat(4, 30px);
+      grid-template-columns: 35px;
+      // grid-template-rows: repeat(4, 30px);
       vertical-align: middle;
 
       span {
@@ -113,11 +126,11 @@
 
     .calendar-vehicles {
       display: grid;
-      grid-template-columns: repeat(6, 1fr); // el segundo valor se agregar por JS
+      // grid-template-columns: repeat(6, 1fr); // el segundo valor se agregar por JS
 
       .calendar-vehicle {
         display: grid;
-        grid-template-rows: repeat(4, 30px);
+        grid-template-rows: repeat(24, 30px);
 
         div,
         span {
@@ -131,39 +144,30 @@
         &:last-child span {
           border-right: none;
         }
+
+        &:hover {
+          background-color: #fffbfb;
+        }
       }
     }
   }
-
-  // span {
-  //   @include border-span();
-  //   display: block;
-  //   padding: 0.5rem 0;
-  // }
 }
 
 /*-------------------- Ocupados --------------------*/
 
 .occupied {
   border-bottom: none !important;
-
-  span {
-    border: none !important;
-  }
 }
 
-.v-minute {
-  display: block;
+.current-hour {
+  background-color: #f39c12;
+}
 
-  &:nth-child(1) {
-    height: 30%;
+.last-hour {
+  span {
+    display: block;
     width: 100%;
-  }
-
-  &:nth-child(2) {
-    height: 70%;
-    width: 100%;
-    @include random-bgr();
+    border: none !important;
   }
 }
 
