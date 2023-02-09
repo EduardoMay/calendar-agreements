@@ -83,7 +83,7 @@ class Helpers {
       calVehicleEL.className = 'calendar-vehicle';
 
       for (let i = 0; i < 24; i++) {
-        const spanEl = document.createElement('span');
+        const spanEl = document.createElement('a');
         const divEl = document.createElement('div');
         let lastHour = false;
 
@@ -116,17 +116,17 @@ class Helpers {
               }
             }
 
-            if (i + 1 === +startHour) {
-              spanEl.className = 'occupied';
-              spanEl.style.background = agreeVehicle.color;
-            }
-
             if (i + 1 >= +startHour && i + 1 <= +endHour - 1) {
               spanEl.className = 'occupied';
               spanEl.style.background = agreeVehicle.color;
             }
 
-            if (i + 1 == +endHour) {
+            if (i + 1 == +endHour && DATE.from !== agreeVehicleDateEnd) {
+              spanEl.className = 'occupied';
+              spanEl.style.background = agreeVehicle.color;
+            }
+
+            if (i + 1 == +endHour && DATE.from === agreeVehicleDateEnd) {
               const endMinute =
                 (dayjs(agreeVehicle.end).format('mm') * 100) / 60;
 
@@ -151,6 +151,16 @@ class Helpers {
 
       calVehiclesEl.appendChild(calVehicleEL);
     });
+  }
+
+  getStatus(status) {
+    switch (+status) {
+      case 3:
+        return 'Ya se fue';
+
+      case 4:
+        return 'Presente';
+    }
   }
 }
 
@@ -257,10 +267,10 @@ class FetchData extends Helpers {
             color: '#86caaf'
           },
           {
-            vehicleId: '12',
-            vehicleTypeId: '2',
-            start: '2021-09-24 15:13:00',
-            end: '2021-09-24 16:13:00',
+            vehicleId: '7',
+            vehicleTypeId: '1',
+            start: '2021-10-09 15:13:00',
+            end: '2021-10-10 16:13:00',
             color: '#7e7424'
           }
         ]

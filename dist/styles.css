@@ -35,6 +35,16 @@
   border: 1px solid #e0e0e0;
   margin-top: 1rem;
 }
+.calendar-body .calendar {
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.calendar-body .calendar::-webkit-scrollbar {
+  display: none;
+}
 .calendar-body .calendar-vehicles-list {
   display: grid;
 }
@@ -45,7 +55,7 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .calendar-body .calendar-vehicles-list span:first-child {
   border-bottom: 1px solid #e0e0e0;
@@ -62,6 +72,7 @@
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+  width: max-content;
 }
 .calendar-body .calendar-vehicles-occupation::-webkit-scrollbar {
   display: none;
@@ -79,6 +90,7 @@
   align-items: center;
   text-align: center;
   font-weight: bold;
+  font-size: 1rem;
 }
 .calendar-body .calendar-vehicles-occupation .calendar-hours span:last-child {
   border-bottom: none;
@@ -91,19 +103,21 @@
   grid-template-rows: repeat(24, 30px);
 }
 .calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle div,
-.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle span {
+.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle span,
+.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle a {
   border-right: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
 }
 .calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle div:last-child,
-.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle span:last-child {
+.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle span:last-child,
+.calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle a:last-child {
   border-bottom: none;
 }
 .calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle:last-child span {
   border-right: none;
 }
 .calendar-body .calendar-vehicles-occupation .calendar-vehicles .calendar-vehicle:hover {
-  background-color: #fffbfb;
+  background-color: #f3f3f3;
 }
 
 /*-------------------- Ocupados --------------------*/
@@ -122,23 +136,23 @@
 }
 
 .v1 {
-  background: #700b3e;
+  background: #490453;
 }
 
 .v2 {
-  background: #b02429;
+  background: #f41f3c;
 }
 
 .v3 {
-  background: #ca7a66;
+  background: #3bfa89;
 }
 
 .v4 {
-  background: #cbad62;
+  background: #3d394a;
 }
 
 .v5 {
-  background: #a042bc;
+  background: #d71e7d;
 }
 
 /*# sourceMappingURL=styles.css.map */
